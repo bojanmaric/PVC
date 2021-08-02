@@ -1,0 +1,327 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: "Euclid Circular A", Poppins, Arial;
+    overflow-x: hidden;
+}
+button, input{
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: #ebe7eb;
+}
+li{
+    list-style: none;
+}
+.body-container{
+    
+    max-width: 1200px;
+    display: block;
+    margin: auto;
+    
+}
+.fixed-nav{
+    max-width: 1200px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+.navigation{
+    
+    background-color: #2a2a31;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    height: 55px;
+    z-index: 10;
+    color: #ebe7eb;
+}
+.navigation .nav-list{
+    display: flex;
+   
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-list li{
+    position: relative;
+    padding:0 1rem;
+    cursor: pointer;
+    transition: .5s;
+    font-size: .9rem;
+}
+.nav-list li::before{
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #8744fd;
+    transition:ease-in .3s;
+}
+.nav-item.active::before{
+    width: 100%;
+
+}
+.nav-list .nav-item:hover::before{
+    width: 100%;
+    
+}
+
+.info-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+.information-header i{
+    color: #90ca2c;
+    font-size: 1.5rem;
+}
+.information-header a,h3{
+    color: #333333;
+    font-size: .8rem;
+    
+}
+.info-header img{
+
+    width: 200px;
+    height: auto;
+}
+.information-header{
+
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    gap: 2rem;
+    text-transform: uppercase;
+    padding: 2rem 1rem;
+    background-color: rgba(0, 0, 0, .05);
+}
+.slider{
+    width: 100%;
+    position: relative;
+}
+.slider img{
+    width: 100%;
+    height: auto;
+}
+.slider .slide-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    text-transform: uppercase;
+    background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,.1));
+}
+.slide-text h2{
+    color: #8744fd;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+.slide-text h3{
+    font-weight: 600;
+    font-size: .9rem;
+}
+.slide-info .slide-text{
+    margin: auto;
+    margin-bottom: 4rem;
+}
+.main-content{
+    width: 100%;
+}
+.posts{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
+}
+.post{
+   margin: 1rem;
+   overflow: hidden;
+   box-shadow: 0 0 10px 10px rgba(248, 248, 248, 0.5);
+   border-radius: .3rem .3rem 0 0 ;
+ 
+}
+.post .img{
+    position: relative;
+}
+.post .img img{
+    width: 100%;
+}
+.post .img::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgba(255,255,255,.6) );
+    left: 0;
+}
+.post .post-content{
+    padding: 1rem;
+}
+.post-content h1,h3{
+    text-transform: uppercase;
+    position: relative;
+    margin: 1rem 0;
+}
+.post:nth-child(2n+1) h1{
+    color:#8744fd ;
+}
+.post:nth-child(2n+2) h1{
+    color:#90ca2c ;
+}
+.post-content button{
+    width: 80%;
+    margin: .5rem 0;
+    padding: .5rem;
+    padding-left: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: left;
+    transition: .5s;
+}
+.post:nth-child(2n+1) button:hover{
+    color: #8744fd;
+    background: none;
+}
+.post:nth-child(2n+2) button:hover{
+    color: #90ca2c;
+    background: none;
+}
+.post:nth-child(2n+1) button{
+    background-color:#8744fd;
+    border: 1px solid #8744fd;
+}
+.post:nth-child(2n+2) button{
+    background-color:#90ca2c ;
+    border: 1px solid#90ca2c ;
+}
+.post:nth-child(odd) h1::before{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    bottom: -5px;
+    background-color:#8744fd ;
+}
+.post:nth-child(even) h1::before{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    bottom: -5px;
+    background-color:#90ca2c ;
+}
+
+footer{
+    
+    background-color: #8744fd;
+   
+
+}
+footer .footer-content{
+   
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 0;
+}
+.footer-part img{
+    width: 100%;
+    max-width: 200px;
+}
+.footer-part{
+   
+    padding: 1rem;
+    width: 100%;
+    
+}
+.footer-part h3{
+  
+    text-align: center;
+    
+    color: #90ca2c ;
+    font-weight: 600;
+    font-size: 1rem;
+    
+}
+.footer-part h4{
+    margin-left: 2rem;
+    letter-spacing: 1px;
+}
+.footer-part i{
+    color: #90ca2c ;
+    font-weight: 600;
+    font-size: 1rem;
+    
+}
+.lokacija iframe{
+    width: 80%;
+    height: 100%;
+}
+.info-boj{
+    background-color: #6c36c9;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    
+    width: 100%;
+}
+.info-boj a{
+    font-weight: 600;
+}
+
+
+
+
+
+@media screen and (max-width:768px) {
+
+    .info-header{
+        display: none;
+    }
+    .posts{
+        grid-template-columns: 100%;
+    }
+     .footer-content{
+        grid-template-columns: 50% 50%!important;
+
+    }
+    
+}
+@media screen and (max-width:450px) {
+     .footer-content{
+        grid-template-columns: 100%!important;
+
+    }
+
+
+}
+
+
+
